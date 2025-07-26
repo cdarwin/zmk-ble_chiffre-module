@@ -7,6 +7,9 @@ CONFIG_BOARD_BLE_CHIFFRE=y
 # Enable MPU
 CONFIG_ARM_MPU=y
 
+# enable pinctrl
+CONFIG_PINCTRL=y
+
 # enable GPIO
 CONFIG_GPIO=y
 
