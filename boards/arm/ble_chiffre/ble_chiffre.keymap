@@ -17,7 +17,7 @@
     behaviors {
         rst: boot_reset {
             compatible = "zmk,behavior-hold-tap";
-            label = "Bootloader Tap - Reset Hold";
+            display-name = "Bootloader Tap - Reset Hold";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
@@ -26,7 +26,7 @@
 
         bh: layer_taps {
             compatible = "zmk,behavior-hold-tap";
-            label = "Layer-Tap";
+            display-name = "Layer-Tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
@@ -35,7 +35,7 @@
 
         hm: homerow_mods0 {
             compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods";
+            display-name = "homerow mods";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
@@ -44,7 +44,7 @@
 
         hm1: homerow_mods1 {
             compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods";
+            display-name = "homerow mods";
             #binding-cells = <2>;
             tapping-term-ms = <205>;
             flavor = "tap-preferred";

@@ -16,19 +16,18 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
+        zmk,battery = &vbatt;
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
     };
 
-    ext-power {
+    EXT_POWER {
         compatible = "zmk,ext-power-generic";
-        label = "EXT_POWER";
         control-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
     };
 
-    vbatt {
+    vbatt: vbatt {
         compatible = "zmk,battery-voltage-divider";
-        label = "BATTERY";
         io-channels = <&adc 2>;
         output-ohms = <1900000>;
         full-ohms = <(1900000 + 806000)>;
@@ -48,7 +47,6 @@
 
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
         diode-direction = "col2row";
 
         col-gpios
@@ -133,11 +131,9 @@
         #size-cells = <1>;
 
         sd_partition: partition@0 {
-            label = "softdevice";
             reg = <0x00000000 0x00026000>;
         };
         code_partition: partition@26000 {
-            label = "code_partition";
             reg = <0x00026000 0x000c6000>;
         };
 
@@ -151,12 +147,10 @@
          * if enabled.
          */
         storage_partition: partition@ec000 {
-            label = "storage";
             reg = <0x000ec000 0x00008000>;
         };
 
         boot_partition: partition@f4000 {
-            label = "adafruit_boot";
             reg = <0x000f4000 0x0000c000>;
         };
     };
