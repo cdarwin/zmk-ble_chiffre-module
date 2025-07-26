@@ -4,7 +4,15 @@ This repository contains the board files for the [BLe Chiffre](https://github.co
 
 ## Usage
 
-Edit your west.yml file found in your zmk-config's config directory to add the akohekohe module. Example:
+Add this module as a dependenacy in your `zephyr/module.yml` file. Example:
+
+```
+build:
+  depends:
+    - zmk-keyboard-ble_chiffre
+```
+
+Edit your `west.yml` file found in your zmk-config's config directory to add this module. Example:
 
 ```
 manifest:
@@ -23,4 +31,5 @@ manifest:
   self:
     path: config
 ```
-Once you have the module added to your west.yml you can then build firmware as if it was in your config's board directory or in ZMK main.
+
+With these changes you can then build firmware as if it was in your config's board directory or in ZMK main.
