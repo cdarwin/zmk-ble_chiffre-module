@@ -13,7 +13,7 @@
 
 / {
     model = "BLe Chiffre";
-    compatible = "ble,chiffre";
+    compatible = "tominabox,ble-chiffre";
 
     chosen {
         zephyr,code-partition = &code_partition;
